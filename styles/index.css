@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    background: #000;
+}
+
+.background {
+    height: 100vh;
+    background: linear-gradient(135deg, #1e5799 0%,#7db9e8 100%);
+    animation: Gradient 500s ease infinite;
+    opacity: .8;
+}
+
+.background.background--image-loaded::after {
+    content: '';
+    height: 100vh;
+    display: block;
+    background: url("../images/tiger.svg");
+    opacity: 0.5;
+    background-size: 33vh;
+    background-position: center center;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.countdown__container {
+    padding: 10px;
+    background: rgba(255,255,255, .7);
+    border-top: 1px solid #000000;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+    text-align: right;
+}
+
+.countdown__clock {
+    padding-right: 20px;
+    font-size: 12px;
+    font-family: sans-serif;
+    height: 14px;
+}
