@@ -1,74 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>EZ Tiger</title>
-    <style type="text/css">
-      body {
-        margin: 0;
-        background: #000;
-      }
-
-      .background {
-        height: 100vh;
-        background: linear-gradient(135deg, #1e5799 0%,#7db9e8 100%);
-        animation: Gradient 500s ease infinite;
-        opacity: .8;
-      }
-
-      .background.background--image-loaded::after {
-        content: '';
-        height: 100vh;
-        display: block;
-        background: url("./images/tiger.svg");
-        opacity: 0.5;
-        background-size: 33vh;
-        background-position: center center;
-      }
-
-      @keyframes Gradient {
-        0% {
-          background-position: 0% 50%
-        }
-        50% {
-          background-position: 100% 50%
-        }
-        100% {
-          background-position: 0% 50%
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="background">
-    </div>
-    <script type="text/javascript">
-      const img = new Image();
-      const bg = document.querySelector('.background');
-      img.onload = () => {
-        bg.classList.add("background--image-loaded");
-      }
-      img.src = "./images/tiger.svg";
-
-      const colors = [];
-
-      const hexValue = hexish => !hexish.match(/#/) ? `#${hexish}` : hexish;
-
-      let gradientString = "";
-      fetch('https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json')
-        .then((response) => {
-          return response.json();
-        }).then((json) => {
-          json.forEach((item) => {
-            item.colors.forEach((color) => {
-              colors.push(hexValue(color));
-            });
-          });
-          gradientString = "linear-gradient(-45deg, " + colors + ")";
-          bg.style.backgroundImage = gradientString;
-          bg.style.backgroundSize = (colors.length * 100) + "% " + (colors.length * 100) + "%";
-        });
-    </script>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>EZ Tiger</title>
+        <link href="./styles/index.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="content">
+            <div class="countdown__container">
+                <div class="countdown__clock" id="countdown"></div>
+            </div>
+        </div>
+        <div class="background"></div>
+        <script src="./scripts/index.js"></script>
+    </body>
 </html>
 
