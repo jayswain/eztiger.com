@@ -2,14 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>EZ Tiger</title>
+    <title>EZ Tiger - Burning Man 2019 - 4:15 & Cupid</title>
     <style type="text/css">
       body {
         margin: 0;
         background: #000;
+        text-align: center;
       }
 
       .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         height: 100vh;
         background: linear-gradient(135deg, #1e5799 0%,#7db9e8 100%);
         animation: Gradient 500s ease infinite;
@@ -26,6 +32,13 @@
         background-position: center center;
       }
 
+      .schedule {
+        position: relative;
+        height: 70vh;
+        z-index: 10;
+        margin-top: 10vh;
+      }
+
       @keyframes Gradient {
         0% {
           background-position: 0% 50%
@@ -40,6 +53,7 @@
     </style>
   </head>
   <body>
+    <img src="images/ez_tiger_schedule_2019.jpg" alt="EZ Tiger Schedule 2019 - Mon (3pm - 6pm) Jungle Party - Tue (9pm - 12am) Animalia Party - Wed (6pm - 9pm) Sound Picnic - Thur (9pm - 12am) Pussy Power Party - Fri (3pm - 6pm) Jungle Party"  class="schedule">
     <div class="background">
     </div>
     <script type="text/javascript">
